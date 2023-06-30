@@ -1,0 +1,44 @@
+.SWW__Navbar {
+  max-width: 100%;
+  width: 100%;
+  min-width: 100%;
+
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* -- Image -- */
+.SWW__Navar__Logo {
+  width: 20%;
+}
+
+.SWW__Navar__Logo > img {
+  width: 100%;
+}
+
+/* -- Text Links -- */
+.SWW__Navar__Links > * {
+  margin: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+/* -- Icons -- */
+.SWW__Navar__Icons {
+  width: 20%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.SWW__Navar__Icons > * {
+  margin: 1rem;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+}

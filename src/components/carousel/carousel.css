@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap");
+
+@font-face {
+  font-family: "SHEESSHHH";
+  src: url("../../assets/fonts/digital-7.ttf");
+}
+
+.SWW__Marquee {
+  display: flex;
+  overflow: hidden;
+
+  color: white;
+  background-color: black;
+
+  font-weight: bold;
+  font-family: "SHEESSHHH";
+  font-size: 1.5rem;
+
+  letter-spacing: 0.2rem;
+
+  padding: 1rem;
+}
+
+.SWW__Marquee__Group {
+  min-width: 100%;
+  width: 100%;
+
+  flex-shrink: 0;
+  gap: 0rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% - 0rem));
+  }
+}
