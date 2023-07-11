@@ -17,7 +17,7 @@ const Navbar = () => {
       </div>
 
       <div className="SWW__Navar__Links">
-        <Link to="/">STARGAZE</Link>
+        <Link to="/">STRGZE</Link>
         <Link to="/">COLLECTIONS</Link>
         <Link to="/">ARCHIVE</Link>
       </div>
