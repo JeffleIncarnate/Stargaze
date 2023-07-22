@@ -20,10 +20,48 @@
 }
 
 /* -- Text Links -- */
+.SWW__Navar__Links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60%;
+}
+
 .SWW__Navar__Links > * {
   margin: 1rem;
+
   text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+
   color: black;
+
+  transition: all 0.3s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.SWW__Navar__Links > *::after {
+  content: "";
+
+  height: 0.2rem;
+  width: 0;
+
+  background-color: var(--primary);
+
+  transition: all 0.3s ease-in-out;
+}
+
+.SWW__Navar__Links > *:hover {
+  color: var(--primary);
+}
+
+.SWW__Navar__Links > *:hover::after {
+  width: 100%;
 }
 
 /* -- Icons -- */
@@ -36,9 +74,20 @@
 }
 
 .SWW__Navar__Icons > * {
-  margin: 1rem;
+  margin: 1.5rem;
 
   font-size: 2rem;
 
   cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.SWW__Navar__Icons > *:hover {
+  color: var(--primary);
 }
