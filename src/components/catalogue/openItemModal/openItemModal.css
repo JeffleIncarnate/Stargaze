@@ -10,6 +10,7 @@
 
   position: fixed;
   top: 0;
+  user-select: none;
 }
 
 .SWW__ItemModal__Backdrop > button {
@@ -86,5 +87,75 @@
 }
 
 .SWW__ItemModal__Main__Right__Sizes {
+  width: 40%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SWW__ItemModal__Main__Right__Sizes
+  > .SWW__ItemModal__Main__Right__Sizes__NotActive {
+  margin: 1rem 0 0.5rem 0;
+
+  font-family: inherit;
+  font-size: 1.2rem;
+
+  border: none;
+
+  color: grey;
+
+  background: transparent;
+}
+
+.SWW__ItemModal__Main__Right__Sizes
+  > .SWW__ItemModal__Main__Right__Sizes__Active {
+  margin: 1rem 0 0.5rem 0;
+
+  font-family: inherit;
+  font-size: 1.2rem;
+
+  border: none;
+
+  border-bottom: 0.2rem solid var(--black);
+
+  color: var(--black);
+
+  background: transparent;
+}
+
+.SWW__ItemModal__Main__Right__AddToCart {
+  width: 80%;
+
+  padding: 1rem 0;
+  margin: 1rem 0;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: inherit;
+
+  background-color: var(--black);
+  color: white;
+
+  border: none;
+}
+
+.SWW__ItemModal__Main__Right__Dropdown {
+  width: 80%;
+}
+
+.SWW__ItemModal__Main__Right__Dropdown__Icon {
   width: 100%;
+
+  margin: 0.5rem 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 1.5rem;
+  padding: 1rem 0;
+
+  border-top: 0.1rem solid grey;
+  border-bottom: 0.1rem solid grey;
 }

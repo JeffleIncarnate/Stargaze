@@ -56,7 +56,9 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({ itemName, cost }) => {
       <h2>{itemName}</h2>
       <p>${cost} NZD</p>
       <__OpenIemModalRightSize />
-      <button>Add To Cart</button>
+      <button className="SWW__ItemModal__Main__Right__AddToCart">
+        ADD TO CART
+      </button>
       <__OpenIemModalRightDropdown
         name="DESCRIPTION"
         text="Lorem ipsum dolar sit"
