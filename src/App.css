@@ -20,3 +20,7 @@ body {
   --primary: #659ed7;
   --black: #181818;
 }
+
+button {
+  cursor: pointer;
+}
