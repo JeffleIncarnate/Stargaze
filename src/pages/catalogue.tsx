@@ -1,17 +1,17 @@
 import WordCarousel from "../components/carousel/carousel";
 import Navbar from "../components/navbar/navbar";
-import Collections from "../components/catalogue/catalogue";
+import Catalogue from "../components/catalogue/catalogue";
 import Footer from "../components/footer/footer";
 
-const CollectionsPage = () => {
+const CataloguePage = () => {
   return (
     <>
       <WordCarousel />
       <Navbar />
-      <Collections />
+      <Catalogue />
       <Footer />
     </>
   );
 };
 
-export default CollectionsPage;
+export default CataloguePage;

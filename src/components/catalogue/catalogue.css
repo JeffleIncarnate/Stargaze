@@ -1,0 +1,53 @@
+.SWW__Catalogue {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin: 1rem 0 5rem 0;
+}
+
+.SWW__Catalogue__Item {
+  width: 33.333333%;
+
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  cursor: pointer;
+
+  border-radius: 1rem;
+
+  text-align: center;
+
+  transition: box-shadow 0.3s;
+}
+
+.SWW__Catalogue__Item:hover {
+  box-shadow: 0 0 20px rgba(33, 33, 33, 0.2);
+  background: radial-gradient(
+    circle at 18.7% 37.8%,
+    rgb(250, 250, 250) 0%,
+    rgb(225, 234, 238) 90%
+  );
+}
+
+.SWW__Catalogue__Item > img {
+  max-width: 100%;
+  border-radius: inherit;
+}
+
+.SWW__Catalogue__Item > h2 {
+  font-size: 2rem;
+}
+
+.SWW__Catalogue__Item > p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
