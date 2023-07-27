@@ -22,60 +22,18 @@ const Catalogue = () => {
       itemName: "Call me when you're Star Gazing",
       cost: "45.00",
     },
-    {
-      uuid: "e",
-      img: Item1,
-      itemName: "Call me when you're Star Gazing",
-      cost: "45.00",
-    },
-    {
-      uuid: "e",
-      img: Item1,
-      itemName: "Call me when you're Star Gazing",
-      cost: "45.00",
-    },
-    {
-      uuid: "e",
-      img: Item1,
-      itemName: "Call me when you're Star Gazing",
-      cost: "45.00",
-    },
-    {
-      uuid: "e",
-      img: Item1,
-      itemName: "Call me when you're Star Gazing",
-      cost: "45.00",
-    },
-    {
-      uuid: "e",
-      img: Item1,
-      itemName: "Call me when you're Star Gazing",
-      cost: "45.00",
-    },
-    {
-      uuid: "e",
-      img: Item1,
-      itemName: "Call me when you're Star Gazing",
-      cost: "45.00",
-    },
-    {
-      uuid: "e",
-      img: Item1,
-      itemName: "Call me when you're Star Gazing",
-      cost: "45.00",
-    },
-    {
-      uuid: "e",
-      img: Item1,
-      itemName: "Call me when you're Star Gazing",
-      cost: "45.00",
-    },
   ];
 
   return (
     <main className="SWW__Catalogue">
       {items.map((item) => {
-        return <_CollectionsItem item={item} setOpenItem={setOpenItem} />;
+        return (
+          <_CollectionsItem
+            key={crypto.randomUUID()}
+            item={item}
+            setOpenItem={setOpenItem}
+          />
+        );
       })}
 
       {openItem !== null ? (

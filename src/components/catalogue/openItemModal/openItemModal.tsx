@@ -12,6 +12,9 @@ interface IOpenItemModal {
 }
 
 const OpenItemModal: FC<IOpenItemModal> = ({ openItem, setOpenItem }) => {
+  let [qty, setQty] = useState<number>(0);
+  let [size, setSize] = useState<number>(0);
+
   return (
     <div className="SWW__ItemModal__Backdrop">
       <button
@@ -24,10 +27,7 @@ const OpenItemModal: FC<IOpenItemModal> = ({ openItem, setOpenItem }) => {
 
       <div className="SWW__ItemModal__Main">
         <_OpenItemModalLeft img={openItem.img} />
-        <_OpenItemModalRight
-          itemName={openItem.itemName}
-          cost={openItem.cost}
-        />
+        <_OpenItemModalRight item={openItem} />
       </div>
     </div>
   );
@@ -46,15 +46,14 @@ const _OpenItemModalLeft: FC<_IOpenItemModalLeft> = ({ img }) => {
 };
 
 interface _IOpenItemModalRight {
-  itemName: string;
-  cost: string;
+  item: Item;
 }
 
-const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({ itemName, cost }) => {
+const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({ item }) => {
   return (
     <div className="SWW__ItemModal__Main__Right">
-      <h2>{itemName}</h2>
-      <p>${cost} NZD</p>
+      <h2>{item.itemName}</h2>
+      <p>${item.cost} NZD</p>
       <__OpenIemModalRightSize />
       <button className="SWW__ItemModal__Main__Right__AddToCart">
         ADD TO CART
