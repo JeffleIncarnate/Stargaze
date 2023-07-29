@@ -15,7 +15,7 @@ interface _ICartItem {
 }
 
 const _CartItem: FC<_ICartItem> = ({}) => {
-  return;
+  return <div></div>
 };
 
 export default Cart;

@@ -11,9 +11,17 @@ interface IOpenItemModal {
   setOpenItem: (item: Item | null) => void;
 }
 
+interface ICartItem {
+  uuid: string;
+  itemName: string;
+  cost: string;
+  size: string;
+  qty: number;
+}
+
 const OpenItemModal: FC<IOpenItemModal> = ({ openItem, setOpenItem }) => {
-  let [qty, setQty] = useState<number>(0);
-  let [size, setSize] = useState<number>(0);
+  let [qty, setQty] = useState<number>(1);
+  let [size, setSize] = useState<string>("medium");
 
   return (
     <div className="SWW__ItemModal__Backdrop">
@@ -27,7 +35,13 @@ const OpenItemModal: FC<IOpenItemModal> = ({ openItem, setOpenItem }) => {
 
       <div className="SWW__ItemModal__Main">
         <_OpenItemModalLeft img={openItem.img} />
-        <_OpenItemModalRight item={openItem} />
+        <_OpenItemModalRight
+          item={openItem}
+          qty={qty}
+          setQty={setQty}
+          size={size}
+          setSize={setSize}
+        />
       </div>
     </div>
   );
@@ -47,15 +61,86 @@ const _OpenItemModalLeft: FC<_IOpenItemModalLeft> = ({ img }) => {
 
 interface _IOpenItemModalRight {
   item: Item;
+  setQty: (qty: number) => void;
+  qty: number;
+  setSize: (size: string) => void;
+  size: string;
 }
 
-const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({ item }) => {
+const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
+  item,
+  qty,
+  size,
+  setSize,
+}) => {
   return (
     <div className="SWW__ItemModal__Main__Right">
       <h2>{item.itemName}</h2>
       <p>${item.cost} NZD</p>
-      <__OpenIemModalRightSize />
-      <button className="SWW__ItemModal__Main__Right__AddToCart">
+      <__OpenIemModalRightSize size={size} setSize={setSize} />
+      <button
+        onClick={() => {
+          let cartItem: ICartItem = {
+            uuid: item.uuid,
+            itemName: item.itemName,
+            cost: item.cost,
+            size: size,
+            qty: qty,
+          };
+
+          // Get the Current Cart
+          let currentCartDataString: string | null =
+            localStorage.getItem("cart");
+
+          // Check if the sesion storage is null
+          if (currentCartDataString === null) {
+            let initData: ICartItem[] = [cartItem];
+            return localStorage.setItem("cart", JSON.stringify(initData));
+          }
+
+          // else we just use the current cart data
+          let currentCartData: ICartItem[] = JSON.parse(currentCartDataString);
+
+          const getItemValue = currentCartData.filter(
+            (x) => x.uuid === cartItem.uuid && x.size === cartItem.size
+          );
+
+          console.log(getItemValue);
+
+          // If That item is not found then we just append it to the array
+          if (getItemValue.length === 0) {
+            currentCartData.push(cartItem);
+
+            return localStorage.setItem(
+              "cart",
+              JSON.stringify(currentCartData)
+            );
+          }
+
+          // Get the index of that item
+          let index = 0;
+          for (let i = 0; i < currentCartData.length; i++) {
+            let tmp = { ...getItemValue };
+
+            if (JSON.stringify(currentCartData[i]) === JSON.stringify(tmp[0])) {
+              index = i;
+            }
+          }
+
+          let newItem: ICartItem = {
+            uuid: cartItem.uuid,
+            itemName: cartItem.itemName,
+            cost: cartItem.cost,
+            size: cartItem.size,
+            qty: getItemValue[0].qty + 1,
+          };
+
+          currentCartData[index] = newItem;
+
+          return localStorage.setItem("cart", JSON.stringify(currentCartData));
+        }}
+        className="SWW__ItemModal__Main__Right__AddToCart"
+      >
         ADD TO CART
       </button>
       <__OpenIemModalRightDropdown
@@ -78,9 +163,15 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({ item }) => {
   );
 };
 
-const __OpenIemModalRightSize = () => {
-  const [size, setSize] = useState("medium");
+interface __IOpenIemModalRightSize {
+  setSize: (qty: string) => void;
+  size: string;
+}
 
+const __OpenIemModalRightSize: FC<__IOpenIemModalRightSize> = ({
+  size,
+  setSize,
+}) => {
   return (
     <div className="SWW__ItemModal__Main__Right__Sizes">
       <button
