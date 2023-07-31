@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const CataloguePage = () => {
   useEffect(() => {
     document.title = "Catalogue | STRGZE";
-  });
+  }, []);
 
   return (
     <>

@@ -1,0 +1,153 @@
+.SWW__CartSmall {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 30vw;
+  height: 100vh;
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  z-index: 100;
+
+  overflow-y: scroll;
+}
+
+.SWW__CartSmall::-webkit-scrollbar {
+  display: none;
+}
+
+.SWW__CartSmall h2 {
+  margin: 4rem 0 1rem 1rem;
+
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.SWW__CartSmall__Close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+
+  background-color: transparent;
+  border: none;
+  font-size: 4rem;
+}
+
+/* ---- Item ---- */
+.SWW__CartSmall__Items__Item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 1rem 0;
+}
+
+.SWW__CartSmall__Items__Item__Img {
+  flex: 2;
+}
+
+.SWW__CartSmall__Items__Item__Img > img {
+  width: 100%;
+}
+
+.SWW__CartSmall__Items__Item__Data {
+  flex: 2;
+
+  text-transform: capitalize;
+}
+
+.SWW__CartSmall__Items__Item__Data > h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.SWW__CartSmall__Items__Item__Data > p {
+  font-size: 1rem;
+}
+
+.SWW__CartSmall__Items__Item__Data > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  text-align: center;
+
+  border: 0.12rem grey solid;
+  margin: 0.5rem 0;
+}
+
+.SWW__CartSmall__Items__Item__Data > div > * {
+  flex: 1;
+}
+
+.SWW__CartSmall__Items__Item__Data > div > button {
+  padding: 0.5rem;
+
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+}
+
+.SWW__CartSmall__Items__Item__Cost {
+  flex: 1;
+
+  text-align: center;
+}
+
+.SWW__CartSmall__Items__Item__Icon {
+  flex: 0.5;
+
+  text-align: center;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.SWW__CartSmall__Items__Item__Icon:hover {
+  color: red;
+}
+
+/* Price */
+.SWW__CartSmall__Total__Bottom {
+  width: 100%;
+}
+
+.SWW__CartSmall__Total__Totals {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0.5rem 0;
+
+  padding: 0 1rem;
+
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.SWW__CartSmall__Total__Bottom > .SWW__CartSmall__Total__Totals:nth-child(2) {
+  color: grey;
+}
+
+.SWW__CartSmall__Total__Bottom > button {
+  width: calc(100% - 2rem);
+
+  margin: 0 1rem 1rem 1rem;
+  padding: 0.5rem;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  background-color: var(--black);
+  color: white;
+}

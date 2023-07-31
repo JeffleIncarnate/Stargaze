@@ -7,9 +7,27 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 // Images
 import { StargazeLogoBlack } from "../../assets/__img__";
+import { useEffect, useState } from "react";
+
+// Components
+import CartSmall from "../cartSmall/cartSmall";
 
 const Navbar = () => {
   const navigate = useNavigate();
+
+  const [cartOpen, setCartOpen] = useState<boolean>(false);
+
+  const [numOfItems, setNumOfItems] = useState<number>(
+    JSON.parse(localStorage.getItem("cart") ?? "[]").length
+  );
+
+  const handleShoppingCartClick = () => {
+    setCartOpen((cartOpen) => !cartOpen);
+  };
+
+  useEffect(() => {
+    setNumOfItems(JSON.parse(localStorage.getItem("cart") ?? "[]").length);
+  }, [numOfItems]);
 
   return (
     <nav className="SWW__Navbar">
@@ -30,8 +48,20 @@ const Navbar = () => {
 
       <div className="SWW__Navar__Icons">
         <FontAwesomeIcon icon={faSearch} />
-        <FontAwesomeIcon icon={faShoppingCart} />
+        <div className="SWW__Navnar__Icons__ShoppingCart">
+          <FontAwesomeIcon
+            icon={faShoppingCart}
+            onClick={() => {
+              handleShoppingCartClick();
+            }}
+          />
+          <div>
+            <p>{numOfItems}</p>
+          </div>
+        </div>
       </div>
+
+      {cartOpen ? <CartSmall setCartOpen={setCartOpen} /> : null}
     </nav>
   );
 };

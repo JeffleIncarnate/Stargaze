@@ -4,7 +4,7 @@ import { FC, useState } from "react";
 import { Item } from "../catalogue";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faMinus, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 interface IOpenItemModal {
   openItem: Item;
@@ -17,6 +17,7 @@ interface ICartItem {
   cost: string;
   size: string;
   qty: number;
+  img: string;
 }
 
 const OpenItemModal: FC<IOpenItemModal> = ({ openItem, setOpenItem }) => {
@@ -30,7 +31,7 @@ const OpenItemModal: FC<IOpenItemModal> = ({ openItem, setOpenItem }) => {
           setOpenItem(null);
         }}
       >
-        X
+        <FontAwesomeIcon icon={faXmark} />
       </button>
 
       <div className="SWW__ItemModal__Main">
@@ -86,6 +87,7 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
             cost: item.cost,
             size: size,
             qty: qty,
+            img: item.img,
           };
 
           // Get the Current Cart
@@ -133,6 +135,7 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
             cost: cartItem.cost,
             size: cartItem.size,
             qty: getItemValue[0].qty + 1,
+            img: cartItem.img,
           };
 
           currentCartData[index] = newItem;

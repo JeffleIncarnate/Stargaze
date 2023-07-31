@@ -76,7 +76,7 @@
 .SWW__Navar__Icons > * {
   margin: 1.5rem;
 
-  font-size: 2rem;
+  font-size: 3rem;
 
   cursor: pointer;
 
@@ -90,4 +90,28 @@
 
 .SWW__Navar__Icons > *:hover {
   color: var(--primary);
+}
+
+.SWW__Navnar__Icons__ShoppingCart {
+  position: relative;
+}
+
+.SWW__Navnar__Icons__ShoppingCart > div {
+  width: 2rem;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+
+  font-size: 1rem;
+
+  background-color: var(--black);
+  color: white;
+
+  border-radius: 50%;
 }

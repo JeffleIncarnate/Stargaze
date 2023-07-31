@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const CartPage = () => {
   useEffect(() => {
     document.title = "Cart | STRGZE";
-  });
+  }, []);
 
   return (
     <>

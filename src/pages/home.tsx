@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const HomePage = () => {
   useEffect(() => {
     document.title = "Home | STRGZE";
-  });
+  }, []);
 
   return (
     <>

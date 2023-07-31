@@ -10,7 +10,7 @@
 }
 
 .SWW__Catalogue__Item {
-  width: 33.333333%;
+  width: 32%;
 
   padding: 1rem;
 
@@ -25,7 +25,8 @@
 
   text-align: center;
 
-  transition: box-shadow 0.3s;
+  transition: all 0.3s ease-in-out;
+  background: transparent;
 }
 
 .SWW__Catalogue__Item:hover {
