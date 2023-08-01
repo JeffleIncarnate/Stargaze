@@ -42,8 +42,8 @@ const Navbar = () => {
 
       <div className="SWW__Navar__Links">
         <Link to="/catalogue">CATALOGUE</Link>
-        <Link to="/">COLLECTIONS</Link>
-        <Link to="/">ARCHIVE</Link>
+        <Link to="/comingSoon">COLLECTIONS</Link>
+        <Link to="/comingSoon">ARCHIVE</Link>
       </div>
 
       <div className="SWW__Navar__Icons">

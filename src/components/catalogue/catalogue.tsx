@@ -17,13 +17,13 @@ const Catalogue = () => {
 
   let items: Item[] = [
     {
-      uuid: "e",
+      uuid: "price_1NaHSADurtyT6kdCLCP5hrXF",
       img: Item1,
       itemName: "CMWYSG TEE",
       cost: "50.00",
     },
     {
-      uuid: "e1",
+      uuid: "price_1NaHTSDurtyT6kdC0yq1A8gJ",
       img: Item2,
       itemName: "STRGZE OG TEE",
       cost: "50.00",
