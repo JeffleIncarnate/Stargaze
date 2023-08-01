@@ -1,12 +1,12 @@
 import "./footer.css";
 
-import { StargazeLogoWhite } from "../../assets/__img__";
+import { WhiteSVG } from "../../assets/__img__";
 
 const Footer = () => {
   return (
     <footer className="SWW__Footer">
       <div className="SWW__Footer__Img">
-        <img src={StargazeLogoWhite} alt="" />
+        <img src={WhiteSVG} alt="" />
       </div>
       <div className="SWW__Footer__Links">
         <p>PRIVACY POLICY</p>
@@ -14,7 +14,7 @@ const Footer = () => {
         <p>REFUND POLICY</p>
       </div>
       <div className="SWW__Footer__Email">
-        <p>SUPPORT@STARGAZE</p>
+        <p onClick={() => {}}>SUPPORT@STARGAZE</p>
       </div>
     </footer>
   );

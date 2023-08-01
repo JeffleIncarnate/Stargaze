@@ -18,6 +18,8 @@
   letter-spacing: 0.2rem;
 
   padding: 1rem;
+
+  z-index: 100000000000000;
 }
 
 .SWW__Marquee__Group {

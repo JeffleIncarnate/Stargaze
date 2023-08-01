@@ -19,8 +19,8 @@ const Catalogue = () => {
     {
       uuid: "e",
       img: Item1,
-      itemName: "Call me when you're Star Gazing",
-      cost: "45.00",
+      itemName: "CMWYSG TEE",
+      cost: "50.00",
     },
   ];
 

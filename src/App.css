@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=REM&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -7,7 +7,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "REM", sans-serif;
+  font-family: "Archivo Black", sans-serif;
 }
 
 * {

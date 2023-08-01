@@ -1,0 +1,151 @@
+.SWW__CartBig {
+  width: 80%;
+
+  margin: 1rem 10% 5rem 10%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ---- Headings ---- */
+.SWW__CartBig__Header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: grey;
+
+  font-weight: bold;
+  font-size: 1.2rem;
+
+  padding-bottom: 1rem;
+
+  border-bottom: 0.2rem solid grey;
+}
+
+.SWW__CartBig__Header__Product {
+  flex: 2;
+  text-align: left;
+}
+
+.SWW__CartBig__Header__Price {
+  flex: 2;
+}
+
+.SWW__CartBig__Header__Quantity {
+  flex: 1;
+}
+
+.SWW__CartBig__Header__Total {
+  flex: 1;
+}
+
+/* ---- Items ---- */
+.SWW__CartBig__Items {
+  width: 100%;
+}
+
+/* Item */
+.SWW__CartBig__Items__Item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SWW__CartBig__Items__Item__Product {
+  flex: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SWW__CartBig__Items__Item__Product > img {
+  width: 50%;
+}
+
+.SWW__CartBig__Items__Item__Product > div {
+  width: 50%;
+
+  text-transform: capitalize;
+}
+
+.SWW__CartBig__Items__Item__Product > div > p {
+  font-weight: bold;
+}
+
+.SWW__CartBig__Items__Item__Price {
+  flex: 2;
+
+  text-align: center;
+}
+
+.SWW__CartBig__Items__Item__Quantity {
+  flex: 1;
+
+  padding: 1rem;
+  margin: 0 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.SWW__CartBig__Items__Item__Quantity__Update {
+  border: 0.12rem grey solid;
+
+  width: 80%;
+
+  margin-left: 10%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SWW__CartBig__Items__Item__Quantity__Update > * {
+  flex: 1;
+
+  text-align: center;
+}
+
+.SWW__CartBig__Items__Item__Quantity__Update > button {
+  border: none;
+
+  background: transparent;
+
+  font-weight: bold;
+}
+
+.SWW__CartBig__Items__Item__Quantity__Remove > button {
+  border: none;
+  border-bottom: 0.1rem solid grey;
+
+  margin-top: 1rem;
+
+  background: transparent;
+
+  color: grey;
+
+  font-weight: bold;
+
+  font-size: 1.2rem;
+}
+
+.SWW__CartBig__Items__Item__Total {
+  flex: 1;
+
+  text-align: center;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+}

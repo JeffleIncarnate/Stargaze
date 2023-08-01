@@ -6,7 +6,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 // Images
-import { StargazeLogoBlack } from "../../assets/__img__";
+import { WhiteSVG, BlackSVG } from "../../assets/__img__";
 import { useEffect, useState } from "react";
 
 // Components
@@ -33,7 +33,7 @@ const Navbar = () => {
     <nav className="SWW__Navbar">
       <div className="SWW__Navar__Logo">
         <img
-          src={StargazeLogoBlack}
+          src={BlackSVG}
           onClick={() => {
             navigate("/");
           }}

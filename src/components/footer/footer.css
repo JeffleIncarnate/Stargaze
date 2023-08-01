@@ -28,7 +28,7 @@
 }
 
 .SWW__Footer__Img > img {
-  min-width: 250px;
+  max-width: 20%;
 }
 
 .SWW__Footer__Links {
