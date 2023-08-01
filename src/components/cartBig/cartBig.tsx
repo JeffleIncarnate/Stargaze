@@ -1,6 +1,7 @@
 import "./cartBig.css";
 
 import { FC, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface ICartBigProps {}
 
@@ -14,7 +15,18 @@ interface Item {
 }
 
 const CartBig: FC<ICartBigProps> = ({}) => {
+  let navigate = useNavigate();
   const [items, setItems] = useState<Item[] | null>(null);
+
+  let calculateSubtotal = () => {
+    let total = 0;
+    if (items !== null) {
+      items.forEach((item) => {
+        total += item.qty * parseInt(item.cost);
+      });
+    }
+    return total;
+  };
 
   useEffect(() => {
     let cart = localStorage.getItem("cart");
@@ -37,11 +49,38 @@ const CartBig: FC<ICartBigProps> = ({}) => {
 
       <div className="SWW__CartBig__Items">
         {items !== null && items !== undefined ? (
-          <_CartBigItems
-            key={crypto.randomUUID()}
-            setItems={setItems}
-            items={items}
-          />
+          <>
+            <_CartBigItems
+              key={crypto.randomUUID()}
+              setItems={setItems}
+              items={items}
+            />
+
+            <div className="SWW__CartBig__ContinueShopping">
+              <button
+                onClick={() => {
+                  navigate("/catalogue");
+                }}
+              >
+                CONTINUE SHOPPING
+              </button>
+            </div>
+
+            <div className="SWW__CartBig__SubTotal">
+              <h2>SUBTOTAL</h2>
+              <h2>${calculateSubtotal()}NZD</h2>
+            </div>
+
+            <div className="SWW__CartBig__CheckOut">
+              <button
+                onClick={() => {
+                  navigate("/pay");
+                }}
+              >
+                CHECKOUT
+              </button>
+            </div>
+          </>
         ) : (
           <h2>Empty</h2>
         )}
@@ -118,6 +157,15 @@ const __CartBigItem: FC<__ICartBigItem> = ({ item, setItems }) => {
       // Do all the logic
       let tmp = jsonItems[index];
       tmp.qty = jsonItems[index].qty - 1;
+
+      if (jsonItems[index].qty - 1 < 0) {
+        // Remove it from the array
+        jsonItems.splice(index, 1);
+        setItems(jsonItems);
+        localStorage.setItem("cart", JSON.stringify(jsonItems));
+        return;
+      }
+
       jsonItems[index] = tmp;
 
       setItems(jsonItems);
@@ -158,6 +206,10 @@ const __CartBigItem: FC<__ICartBigItem> = ({ item, setItems }) => {
           index = i;
         }
       }
+
+      jsonItems.splice(index, 1);
+      setItems(jsonItems);
+      localStorage.setItem("cart", JSON.stringify(jsonItems));
     }
   };
 
@@ -195,7 +247,13 @@ const __CartBigItem: FC<__ICartBigItem> = ({ item, setItems }) => {
         </div>
 
         <div className="SWW__CartBig__Items__Item__Quantity__Remove">
-          <button>Remove</button>
+          <button
+            onClick={() => {
+              removeFromCart();
+            }}
+          >
+            Remove
+          </button>
         </div>
       </div>
 

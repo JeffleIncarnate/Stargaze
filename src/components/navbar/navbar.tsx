@@ -6,7 +6,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 // Images
-import { WhiteSVG, BlackSVG } from "../../assets/__img__";
+import { BlackSVG } from "../../assets/__img__";
 import { useEffect, useState } from "react";
 
 // Components

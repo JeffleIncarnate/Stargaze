@@ -51,13 +51,9 @@
   height: 0.2rem;
   width: 0;
 
-  background-color: var(--primary);
+  background-color: black;
 
   transition: all 0.3s ease-in-out;
-}
-
-.SWW__Navar__Links > *:hover {
-  color: var(--primary);
 }
 
 .SWW__Navar__Links > *:hover::after {

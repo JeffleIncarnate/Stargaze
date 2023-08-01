@@ -12,6 +12,8 @@
 .SWW__Catalogue__Item {
   width: 32%;
 
+  height: 40rem;
+
   padding: 1rem;
 
   display: flex;
@@ -31,15 +33,11 @@
 
 .SWW__Catalogue__Item:hover {
   box-shadow: 0 0 20px rgba(33, 33, 33, 0.2);
-  background: radial-gradient(
-    circle at 18.7% 37.8%,
-    rgb(250, 250, 250) 0%,
-    rgb(225, 234, 238) 90%
-  );
 }
 
 .SWW__Catalogue__Item > img {
   max-width: 100%;
+  height: 30rem;
   border-radius: inherit;
 }
 

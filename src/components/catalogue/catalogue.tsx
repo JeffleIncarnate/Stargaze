@@ -2,7 +2,7 @@ import "./catalogue.css";
 
 import { FC, useState } from "react";
 
-import { Item1 } from "../../assets/__img__";
+import { Item1, Item2 } from "../../assets/__img__";
 import OpenItemModal from "./openItemModal/openItemModal";
 
 export interface Item {
@@ -20,6 +20,12 @@ const Catalogue = () => {
       uuid: "e",
       img: Item1,
       itemName: "CMWYSG TEE",
+      cost: "50.00",
+    },
+    {
+      uuid: "e1",
+      img: Item2,
+      itemName: "STRGZE OG TEE",
       cost: "50.00",
     },
   ];
