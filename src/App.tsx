@@ -7,6 +7,7 @@ import HomePage from "./pages/home";
 import CataloguePage from "./pages/catalogue";
 import CartPage from "./pages/cart";
 import ComingSoonPage from "./pages/comingSoon";
+import PaymentPage from "./pages/pay";
 
 export const ItemsContext = createContext<any>(null);
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="/catalogue" element={<CataloguePage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/comingSoon" element={<ComingSoonPage />} />
+        <Route path="/pay" element={<PaymentPage />} />
       </Routes>
     </ItemsContext.Provider>
   );

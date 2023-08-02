@@ -1,7 +1,7 @@
 import "./navbar.css";
 
 import { useEffect, useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +15,7 @@ import { ItemsContext } from "../../App";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [cartOpen, setCartOpen] = useState<boolean>(false);
 
@@ -53,17 +54,19 @@ const Navbar = () => {
 
       <div className="SWW__Navar__Icons">
         <FontAwesomeIcon icon={faSearch} />
-        <div className="SWW__Navnar__Icons__ShoppingCart">
-          <FontAwesomeIcon
-            icon={faShoppingCart}
-            onClick={() => {
-              handleShoppingCartClick();
-            }}
-          />
-          <div>
-            <p>{numOfItems}</p>
+        {location.pathname === "/pay" ? null : (
+          <div className="SWW__Navnar__Icons__ShoppingCart">
+            <FontAwesomeIcon
+              icon={faShoppingCart}
+              onClick={() => {
+                handleShoppingCartClick();
+              }}
+            />
+            <div>
+              <p>{numOfItems}</p>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {cartOpen ? <CartSmall setCartOpen={setCartOpen} /> : null}

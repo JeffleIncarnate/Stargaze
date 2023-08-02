@@ -1,7 +1,8 @@
 import "./openItemModal.css";
 
-import { FC, useState } from "react";
+import { FC, useState, useContext } from "react";
 import { Item } from "../catalogue";
+import { ItemsContext } from "../../../App";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -74,6 +75,8 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
   size,
   setSize,
 }) => {
+  const { setItems } = useContext(ItemsContext);
+
   return (
     <div className="SWW__ItemModal__Main__Right">
       <h2>{item.itemName}</h2>
@@ -97,6 +100,8 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
           // Check if the sesion storage is null
           if (currentCartDataString === null) {
             let initData: ICartItem[] = [cartItem];
+
+            setItems(initData);
             return localStorage.setItem("cart", JSON.stringify(initData));
           }
 
@@ -107,12 +112,11 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
             (x) => x.uuid === cartItem.uuid && x.size === cartItem.size
           );
 
-          console.log(getItemValue);
-
           // If That item is not found then we just append it to the array
           if (getItemValue.length === 0) {
             currentCartData.push(cartItem);
 
+            setItems(currentCartData);
             return localStorage.setItem(
               "cart",
               JSON.stringify(currentCartData)
@@ -140,6 +144,7 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
 
           currentCartData[index] = newItem;
 
+          setItems(currentCartData);
           return localStorage.setItem("cart", JSON.stringify(currentCartData));
         }}
         className="SWW__ItemModal__Main__Right__AddToCart"
