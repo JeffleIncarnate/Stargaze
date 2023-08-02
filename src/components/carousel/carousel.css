@@ -26,8 +26,11 @@
   min-width: 100%;
   width: 100%;
 
+  margin: 0 2rem;
+
   flex-shrink: 0;
-  gap: 0rem;
+
+  white-space: nowrap;
 
   display: flex;
   align-items: center;
@@ -43,5 +46,11 @@
 
   100% {
     transform: translateX(calc(-100% - 0rem));
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .SWW__Marquee__Group {
+    gap: 100%;
   }
 }
