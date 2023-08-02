@@ -92,6 +92,10 @@
   position: relative;
 }
 
+.SWW__Navnar__Icons__Bars {
+  display: none;
+}
+
 .SWW__Navnar__Icons__ShoppingCart > div {
   width: 2rem;
   height: 2rem;
@@ -110,4 +114,107 @@
   color: white;
 
   border-radius: 50%;
+}
+
+#SWW__Navar__Small {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 0vw;
+
+  z-index: 1;
+
+  white-space: nowrap;
+
+  background-color: var(--black);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  overflow-x: hidden;
+  word-wrap: normal;
+  white-space: nowrap;
+
+  transition: width 0.5s ease-in-out;
+}
+
+.SWW__Navar__Small__Link {
+  font-size: 2rem;
+
+  text-decoration: none;
+
+  color: white;
+  margin: 1rem 0;
+}
+
+.SWW__Navar__Small__CloseButton {
+  position: absolute;
+  top: 4rem;
+  right: 3rem;
+
+  font-size: 5rem;
+
+  color: white;
+}
+
+@media only screen and (max-width: 1130px) {
+  .SWW__Navar__Links > * {
+    font-size: 1.2rem;
+  }
+
+  .SWW__Navar__Icons > * {
+    font-size: 2.5rem;
+  }
+
+  .SWW__Navar__Logo {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .SWW__Navar__Links {
+    display: none;
+  }
+
+  .SWW__Navnar__Icons__Bars {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .SWW__Navar__Links {
+    display: none;
+  }
+
+  .SWW__Navar__Icons > * {
+    font-size: 2rem;
+
+    margin: 1.5rem 1rem;
+  }
+
+  .SWW__Navar__Icons {
+    width: 10%;
+  }
+
+  .SWW__Navnar__Icons__ShoppingCart > div {
+    font-size: 0.5rem;
+
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .SWW__Navar__Logo {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .SWW__Navar__Logo {
+    width: 45%;
+  }
 }

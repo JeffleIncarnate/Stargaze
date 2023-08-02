@@ -3,8 +3,12 @@ import "./navbar.css";
 import { useEffect, useState, useContext } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSearch,
+  faShoppingCart,
+  faBars,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 // Images
 import { BlackSVG } from "../../assets/__img__";
@@ -16,6 +20,7 @@ import { ItemsContext } from "../../App";
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [smallNavOpen, setSmallNavOpen] = useState<boolean>(false);
 
   const [cartOpen, setCartOpen] = useState<boolean>(false);
 
@@ -67,6 +72,45 @@ const Navbar = () => {
             </div>
           </div>
         )}
+
+        <FontAwesomeIcon
+          onClick={() => {
+            let entireNav = document.getElementById("SWW__Navar__Small");
+
+            if (!smallNavOpen) {
+              entireNav!.style.width = "100vw";
+              return setSmallNavOpen(true);
+            }
+
+            entireNav!.style.width = "0vw";
+
+            setSmallNavOpen(false);
+          }}
+          className="SWW__Navnar__Icons__Bars"
+          icon={faBars}
+        />
+      </div>
+
+      <div id="SWW__Navar__Small">
+        <FontAwesomeIcon
+          onClick={() => {
+            let entireNav = document.getElementById("SWW__Navar__Small");
+
+            entireNav!.style.width = "0vw";
+            setSmallNavOpen(false);
+          }}
+          className="SWW__Navar__Small__CloseButton"
+          icon={faXmark}
+        />
+        <Link className="SWW__Navar__Small__Link" to="/catalogue">
+          CATALOGUE
+        </Link>
+        <Link className="SWW__Navar__Small__Link" to="/comingSoon">
+          COLLECTIONS
+        </Link>
+        <Link className="SWW__Navar__Small__Link" to="/comingSoon ">
+          ARCHIVE
+        </Link>
       </div>
 
       {cartOpen ? <CartSmall setCartOpen={setCartOpen} /> : null}
