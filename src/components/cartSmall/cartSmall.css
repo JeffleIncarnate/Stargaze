@@ -12,7 +12,7 @@
   justify-content: space-between;
   flex-direction: column;
 
-  z-index: 100;
+  z-index: 1;
 
   overflow-y: scroll;
 }
@@ -20,9 +20,12 @@
 .SWW__CartSmall::-webkit-scrollbar {
   display: none;
 }
+.SWW__CartSmall__Title {
+  width: 100%;
+}
 
 .SWW__CartSmall h2 {
-  margin: 4rem 0 1rem 1rem;
+  margin: 5rem 0 1rem 1rem;
 
   font-size: 3rem;
   font-weight: bold;
@@ -30,7 +33,7 @@
 
 .SWW__CartSmall__Close {
   position: absolute;
-  top: 2rem;
+  top: 5rem;
   right: 2rem;
 
   background-color: transparent;

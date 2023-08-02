@@ -187,7 +187,7 @@ const __OpenIemModalRightSize: FC<__IOpenIemModalRightSize> = ({
           setSize("small");
         }}
       >
-        Small
+        SMALL
       </button>
       <button
         className={
@@ -199,7 +199,7 @@ const __OpenIemModalRightSize: FC<__IOpenIemModalRightSize> = ({
           setSize("medium");
         }}
       >
-        Medium
+        MEDIUM
       </button>
       <button
         className={
@@ -211,7 +211,7 @@ const __OpenIemModalRightSize: FC<__IOpenIemModalRightSize> = ({
           setSize("large");
         }}
       >
-        Large
+        LARGE
       </button>
     </div>
   );

@@ -3,15 +3,14 @@
   width: 100%;
   max-width: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: block;
 
   background-color: black;
   color: white;
 
   padding: 2rem;
+
+  margin-top: auto;
 }
 
 .SWW__Footer__Img {
@@ -62,4 +61,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.SWW__Footer__Email > a {
+  color: white;
+  text-decoration: none;
 }

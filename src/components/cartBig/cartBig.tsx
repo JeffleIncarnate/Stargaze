@@ -1,7 +1,8 @@
 import "./cartBig.css";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ItemsContext } from "../../App";
 
 interface ICartBigProps {}
 
@@ -16,12 +17,12 @@ interface Item {
 
 const CartBig: FC<ICartBigProps> = ({}) => {
   let navigate = useNavigate();
-  const [items, setItems] = useState<Item[] | null>(null);
+  const { items, setItems } = useContext(ItemsContext);
 
   let calculateSubtotal = () => {
     let total = 0;
     if (items !== null) {
-      items.forEach((item) => {
+      items.forEach((item: Item) => {
         total += item.qty * parseInt(item.cost);
       });
     }
@@ -35,8 +36,10 @@ const CartBig: FC<ICartBigProps> = ({}) => {
       return;
     }
 
-    setItems(JSON.parse(cart));
-  }, []);
+    if (cart !== JSON.stringify(items)) {
+      setItems(JSON.parse(cart));
+    }
+  }, [items]);
 
   return (
     <main className="SWW__CartBig">
@@ -48,7 +51,7 @@ const CartBig: FC<ICartBigProps> = ({}) => {
       </div>
 
       <div className="SWW__CartBig__Items">
-        {items !== null && items !== undefined ? (
+        {items !== null && items !== undefined && items.length !== 0 ? (
           <>
             <_CartBigItems
               key={crypto.randomUUID()}

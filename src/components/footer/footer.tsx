@@ -14,7 +14,7 @@ const Footer = () => {
         <p>REFUND POLICY</p>
       </div>
       <div className="SWW__Footer__Email">
-        <p onClick={() => {}}>SUPPORT@STARGAZE</p>
+        <a href="mailto:support@stargaze.com">SUPPORT@STARGAZE.COM</a>
       </div>
     </footer>
   );

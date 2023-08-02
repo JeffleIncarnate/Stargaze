@@ -1,9 +1,10 @@
 import "./cartSmall.css";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { ItemsContext } from "../../App";
 
 interface ICartSmall {
   setCartOpen: (open: boolean) => void;
@@ -25,7 +26,17 @@ const CartSmall: FC<ICartSmall> = ({ setCartOpen }) => {
     setCartOpen(false);
   };
 
-  const [items, setItems] = useState<Item[] | null>(null);
+  const { items, setItems } = useContext(ItemsContext);
+
+  let calculateSubtotal = () => {
+    let total = 0;
+    if (items !== null) {
+      items.forEach((item: Item) => {
+        total += item.qty * parseInt(item.cost);
+      });
+    }
+    return total;
+  };
 
   useEffect(() => {
     let cart = localStorage.getItem("cart");
@@ -34,8 +45,10 @@ const CartSmall: FC<ICartSmall> = ({ setCartOpen }) => {
       return;
     }
 
-    setItems(JSON.parse(cart));
-  }, []);
+    if (cart !== JSON.stringify(items)) {
+      setItems(JSON.parse(cart));
+    }
+  }, [items]);
 
   return (
     <main className="SWW__CartSmall">
@@ -49,12 +62,14 @@ const CartSmall: FC<ICartSmall> = ({ setCartOpen }) => {
           />
         </button>
 
-        <h2>CART</h2>
+        <div className="SWW__CartSmall__Title">
+          <h2>CART</h2>
+        </div>
 
         <hr />
 
         <div className="SWW__CartSmall__Items">
-          {items !== null && items !== undefined ? (
+          {items !== null && items !== undefined && items.length !== 0 ? (
             <_CartSmallItems
               key={crypto.randomUUID()}
               setItems={setItems}
@@ -71,7 +86,7 @@ const CartSmall: FC<ICartSmall> = ({ setCartOpen }) => {
       <div className="SWW__CartSmall__Total__Bottom">
         <div className="SWW__CartSmall__Total__Totals">
           <p>SUBTOTAL</p>
-          <p>$1000NZD</p>
+          <p>${calculateSubtotal()}NZD</p>
         </div>
 
         <div className="SWW__CartSmall__Total__Totals">
@@ -159,8 +174,57 @@ const __CartSmallItem: FC<__ICartSmallItem> = ({ item, setItems }) => {
       // Do all the logic
       let tmp = jsonItems[index];
       tmp.qty = jsonItems[index].qty - 1;
+
+      if (jsonItems[index].qty - 1 < 0) {
+        // Remove it from the array
+        jsonItems.splice(index, 1);
+        setItems(jsonItems);
+        localStorage.setItem("cart", JSON.stringify(jsonItems));
+        return;
+      }
+
       jsonItems[index] = tmp;
 
+      setItems(jsonItems);
+      localStorage.setItem("cart", JSON.stringify(jsonItems));
+    }
+  };
+
+  const calculateTotal = () => {
+    if (items !== null) {
+      let jsonItems = JSON.parse(items);
+
+      let index = 0;
+
+      // get the index
+      for (let i = 0; i < jsonItems.length; i++) {
+        if (JSON.stringify(item) === JSON.stringify(jsonItems[i])) {
+          index = i;
+        }
+      }
+
+      let productCost = parseInt(jsonItems[index].cost);
+
+      let total = productCost * jsonItems[index].qty;
+
+      return total;
+    }
+  };
+
+  const removeFromCart = () => {
+    if (items !== null) {
+      let jsonItems = JSON.parse(items);
+
+      let index = 0;
+
+      // get the index
+      for (let i = 0; i < jsonItems.length; i++) {
+        if (JSON.stringify(item) === JSON.stringify(jsonItems[i])) {
+          index = i;
+        }
+      }
+
+      jsonItems.splice(index, 1);
       setItems(jsonItems);
       localStorage.setItem("cart", JSON.stringify(jsonItems));
     }
@@ -194,11 +258,16 @@ const __CartSmallItem: FC<__ICartSmallItem> = ({ item, setItems }) => {
         </div>
       </div>
 
-      <p className="SWW__CartSmall__Items__Item__Cost">${item.cost}NZD</p>
+      <p className="SWW__CartSmall__Items__Item__Cost">
+        ${calculateTotal()}NZD
+      </p>
 
       <FontAwesomeIcon
         className="SWW__CartSmall__Items__Item__Icon"
         icon={faTrash}
+        onClick={() => {
+          removeFromCart();
+        }}
       />
     </div>
   );

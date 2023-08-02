@@ -1,5 +1,6 @@
 import "./navbar.css";
 
+import { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -7,27 +8,31 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 // Images
 import { BlackSVG } from "../../assets/__img__";
-import { useEffect, useState } from "react";
 
 // Components
 import CartSmall from "../cartSmall/cartSmall";
+import { ItemsContext } from "../../App";
 
 const Navbar = () => {
   const navigate = useNavigate();
 
   const [cartOpen, setCartOpen] = useState<boolean>(false);
 
-  const [numOfItems, setNumOfItems] = useState<number>(
-    JSON.parse(localStorage.getItem("cart") ?? "[]").length
-  );
+  const [numOfItems, setNumOfItems] = useState<number>(0);
+
+  const { items } = useContext(ItemsContext);
 
   const handleShoppingCartClick = () => {
     setCartOpen((cartOpen) => !cartOpen);
   };
 
   useEffect(() => {
-    setNumOfItems(JSON.parse(localStorage.getItem("cart") ?? "[]").length);
-  }, [numOfItems]);
+    setNumOfItems(items === null ? 0 : items.length);
+  }, [items]);
+
+  useEffect(() => {
+    setNumOfItems(items === null ? 0 : items.length);
+  }, []);
 
   return (
     <nav className="SWW__Navbar">
@@ -43,7 +48,7 @@ const Navbar = () => {
       <div className="SWW__Navar__Links">
         <Link to="/catalogue">CATALOGUE</Link>
         <Link to="/comingSoon">COLLECTIONS</Link>
-        <Link to="/comingSoon">ARCHIVE</Link>
+        <Link to="/comingSoon ">ARCHIVE</Link>
       </div>
 
       <div className="SWW__Navar__Icons">

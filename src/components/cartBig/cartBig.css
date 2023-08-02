@@ -51,6 +51,12 @@
   width: 100%;
 }
 
+.SWW__CartBig__Items > h2 {
+  margin: 1rem 0;
+
+  text-align: center;
+}
+
 /* Item */
 .SWW__CartBig__Items__Item {
   width: 100%;
@@ -124,6 +130,16 @@
   background: transparent;
 
   font-weight: bold;
+}
+
+.SWW__CartBig__Items__Item__Quantity__Remove {
+  width: 80%;
+
+  margin-left: 10%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .SWW__CartBig__Items__Item__Quantity__Remove > button {
