@@ -13,7 +13,7 @@ const Payment = () => {
   const { items } = useContext(ItemsContext);
 
   useEffect(() => {
-    fetch("http://localhost:3000/config").then(async (res) => {
+    fetch(`${import.meta.env.VITE_API_URL}/config`).then(async (res) => {
       const { publishableKey } = await res.json();
       // @ts-ignore
       setStripePromise(loadStripe(publishableKey));
@@ -34,12 +34,13 @@ const Payment = () => {
         redirect: "follow",
       };
 
-      fetch("http://localhost:3000/create-payment-intent", requestOptions).then(
-        async (result) => {
-          var { clientSecret } = await result.json();
-          setClientSecret(clientSecret);
-        }
-      );
+      fetch(
+        `${import.meta.env.VITE_API_URL}/create-payment-intent`,
+        requestOptions
+      ).then(async (result) => {
+        var { clientSecret } = await result.json();
+        setClientSecret(clientSecret);
+      });
     }
   }, [items]);
 
