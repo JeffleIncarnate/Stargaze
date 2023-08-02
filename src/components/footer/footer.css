@@ -27,7 +27,7 @@
 }
 
 .SWW__Footer__Img > img {
-  max-width: 20%;
+  max-width: 400px;
 }
 
 .SWW__Footer__Links {
@@ -42,12 +42,16 @@
   align-items: center;
   justify-content: center;
 
+  flex-wrap: wrap;
+
+  white-space: nowrap;
+
   gap: 2rem;
 }
 
 /* Fallback */
 .SWW__Footer__Links > p {
-  margin: 0 1rem;
+  margin: 1rem;
 }
 
 .SWW__Footer__Email {
@@ -66,4 +70,14 @@
 .SWW__Footer__Email > a {
   color: white;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 550px) {
+  .SWW__Footer__Img > img {
+    max-width: 300px;
+  }
+
+  .SWW__Footer__Links > p {
+    font-size: 0.9rem;
+  }
 }
