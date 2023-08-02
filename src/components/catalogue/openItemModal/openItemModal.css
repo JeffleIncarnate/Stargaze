@@ -87,16 +87,16 @@
 }
 
 .SWW__ItemModal__Main__Right__Sizes {
-  width: 40%;
+  width: 100%;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .SWW__ItemModal__Main__Right__Sizes
   > .SWW__ItemModal__Main__Right__Sizes__NotActive {
-  margin: 1rem 0 0.5rem 0;
+  margin: 1rem 1rem 0.5rem 1rem;
 
   font-family: inherit;
   font-size: 1.2rem;
@@ -110,7 +110,7 @@
 
 .SWW__ItemModal__Main__Right__Sizes
   > .SWW__ItemModal__Main__Right__Sizes__Active {
-  margin: 1rem 0 0.5rem 0;
+  margin: 1rem 1rem 0.5rem 1rem;
 
   font-family: inherit;
   font-size: 1.2rem;
@@ -158,4 +158,60 @@
 
   border-top: 0.1rem solid grey;
   border-bottom: 0.1rem solid grey;
+}
+
+@media only screen and (max-width: 1500px) {
+  .SWW__ItemModal__Backdrop > button {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+
+    z-index: 10000;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .SWW__ItemModal__Main {
+    width: 100vw;
+    height: 100vh;
+
+    border-radius: 0;
+  }
+
+  .SWW__ItemModal__Backdrop > button {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+
+    color: var(--black);
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .SWW__ItemModal__Main {
+    flex-direction: column;
+
+    overflow-y: scroll;
+  }
+
+  .SWW__ItemModal__Main__Left {
+    width: 100%;
+    height: 50%;
+  }
+
+  .SWW__ItemModal__Main__Left > img {
+    height: 100%;
+    width: 300px;
+  }
+
+  .SWW__ItemModal__Main__Right {
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+  }
+
+  .SWW__ItemModal__Main__Right__Sizes {
+    justify-content: center;
+  }
 }

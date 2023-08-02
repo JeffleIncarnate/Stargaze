@@ -11,7 +11,6 @@ const CartPage = () => {
 
   return (
     <>
-      <WordCarousel />
       <Navbar />
       <CartBig />
       <Footer />

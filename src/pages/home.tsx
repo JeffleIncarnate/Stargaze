@@ -11,7 +11,6 @@ const HomePage = () => {
 
   return (
     <>
-      <WordCarousel />
       <Navbar />
       <Splash />
       <Footer />

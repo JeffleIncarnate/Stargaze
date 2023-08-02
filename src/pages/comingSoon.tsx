@@ -11,7 +11,6 @@ const ComingSoonPage = () => {
 
   return (
     <>
-      <WordCarousel />
       <Navbar />
       <CoomingSoon />
       <Footer />

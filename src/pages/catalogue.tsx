@@ -11,7 +11,6 @@ const CataloguePage = () => {
 
   return (
     <>
-      <WordCarousel />
       <Navbar />
       <Catalogue />
       <Footer />
