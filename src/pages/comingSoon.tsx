@@ -1,4 +1,3 @@
-import WordCarousel from "../components/carousel/carousel";
 import Navbar from "../components/navbar/navbar";
 import CoomingSoon from "../components/comingSoon/coomingSoon";
 import Footer from "../components/footer/footer";
