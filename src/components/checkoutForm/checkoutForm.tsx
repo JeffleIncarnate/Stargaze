@@ -69,7 +69,7 @@ const CheckoutForm = () => {
       {items !== null ? (
         <div className="SWW__Payment__ItemsBought">
           {items.map((item: Item) => {
-            return <_ShowItems item={item} />;
+            return <_ShowItems key={crypto.randomUUID()} item={item} />;
           })}
 
           <h2>
@@ -80,16 +80,23 @@ const CheckoutForm = () => {
 
       <form className="SWW__Payment__Form" onSubmit={handleSubmit}>
         <h2>Payment</h2>
-        <PaymentElement options={{}} />
+        <PaymentElement
+          options={{
+            fields: {
+              billingDetails: {
+                email: "auto",
+              },
+            },
+          }}
+        />
 
         <h2>Shipping Information</h2>
         <AddressElement
           options={{ mode: "shipping", fields: { phone: "always" } }}
         />
+
         <button disabled={isProcessing} id="submit">
-          <span id="button-text">
-            {isProcessing ? "Processing ... " : "Pay now"}
-          </span>
+          {isProcessing ? "Processing ... " : "Pay now"}
         </button>
 
         {/* Show any error or success messages */}

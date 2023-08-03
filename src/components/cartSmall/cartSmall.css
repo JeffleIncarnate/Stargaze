@@ -17,6 +17,10 @@
   overflow-y: scroll;
 }
 
+.SWW__CartSmall__Top {
+  width: 100%;
+}
+
 .SWW__CartSmall::-webkit-scrollbar {
   display: none;
 }
@@ -24,11 +28,17 @@
   width: 100%;
 }
 
-.SWW__CartSmall h2 {
+.SWW__CartSmall__Title > h2 {
   margin: 5rem 0 1rem 1rem;
+  width: 100%;
 
   font-size: 3rem;
   font-weight: bold;
+}
+
+.SWW__CartSmall__Items > h2 {
+  text-decoration: none;
+  text-align: center;
 }
 
 .SWW__CartSmall__Close {

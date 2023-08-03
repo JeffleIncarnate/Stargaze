@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 
-import WordCarousel from "../components/carousel/carousel";
 import Navbar from "../components/navbar/navbar";
 import Payment from "../components/payment/payment";
 import Footer from "../components/footer/footer";
@@ -12,7 +11,6 @@ const PaymentPage = () => {
 
   return (
     <>
-      <WordCarousel />
       <Navbar />
       <Payment />
       <Footer />

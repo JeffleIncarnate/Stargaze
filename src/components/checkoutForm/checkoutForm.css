@@ -1,32 +1,49 @@
 .SWW__Payment {
   width: 80%;
 
-  margin: 10% 0;
+  margin: 5rem 10%;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin: 5rem 0;
 }
 
 .SWW__Payment__Form {
-  width: 50%;
+  width: 70%;
+}
+
+.SWW__Payment__Form > * {
+  width: 100%;
 }
 
 .SWW__Payment__Form > button {
-  width: 20%;
-  margin: 1rem 40%;
+  margin: 1rem 0;
   padding: 1rem;
+
   background-color: var(--black);
   color: white;
+
   border: none;
+
+  width: 100%;
+
+  white-space: nowrap;
 }
 
 .SWW__Payment__ItemsBought {
-  width: 50%;
+  width: 30%;
+}
 
-  text-align: center;
+.SWW__Payment__ItemsBought__Item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.SWW__Payment__ItemsBought__Item > img {
+  width: 100%;
+  min-width: 250px;
 }
 
 .SWW__Payment__ItemsBought > h2 {
@@ -35,13 +52,51 @@
 
 /* ---- Style Item bought ---- */
 .SWW__Payment__ItemsBought__Item {
-  width: 50%;
-
-  margin: 0 25%;
+  width: 80%;
 
   text-align: center;
+
+  border-top: 0.1rem grey solid;
+  border-bottom: 0.1rem grey solid;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.SWW__Payment__Form > button {
+  white-space: nowrap;
+  padding: 1rem;
 }
 
 .SWW__Payment__ItemsBought__Item > img {
   width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .SWW__Payment__Form {
+    width: 50%;
+  }
+
+  .SWW__Payment__ItemsBought {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .SWW__Payment {
+    flex-direction: column;
+  }
+
+  .SWW__Payment__Form {
+    width: 100%;
+  }
+
+  .SWW__Payment__ItemsBought {
+    width: 100%;
+
+    margin-bottom: 2rem;
+  }
+
+  .SWW__Payment__ItemsBought__Item {
+    width: 100%;
+  }
 }
