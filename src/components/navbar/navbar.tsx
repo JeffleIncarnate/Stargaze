@@ -29,7 +29,7 @@ const Navbar = () => {
   const { items } = useContext(ItemsContext);
 
   const handleShoppingCartClick = () => {
-    setCartOpen((cartOpen) => !cartOpen);
+    setCartOpen(true);
   };
 
   useEffect(() => {
