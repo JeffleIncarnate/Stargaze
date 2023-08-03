@@ -151,21 +151,18 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
       >
         ADD TO CART
       </button>
-      <__OpenIemModalRightDropdown
-        name="DESCRIPTION"
-        text="Lorem ipsum dolar sit"
-      />
+      <__OpenIemModalRightDropdown name="DESCRIPTION" text={item.desc} />
       <__OpenIemModalRightDropdown
         name="SIZE GUIDE"
         text="Lorem ipsum dolar sit"
       />
       <__OpenIemModalRightDropdown
         name="WASH INSTRUCTIONS"
-        text="Lorem ipsum dolar sit"
+        text={item.washInfo}
       />
       <__OpenIemModalRightDropdown
         name="PRE ORDER INFORMATION"
-        text="Lorem ipsum dolar sit"
+        text={item.preOrder}
       />
     </div>
   );

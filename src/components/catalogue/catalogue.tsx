@@ -10,6 +10,9 @@ export interface Item {
   img: string;
   itemName: string;
   cost: string;
+  desc: string;
+  preOrder: string;
+  washInfo: string;
 }
 
 const Catalogue = () => {
@@ -21,12 +24,20 @@ const Catalogue = () => {
       img: Item1,
       itemName: "CMWYSG TEE",
       cost: "50.00",
+      desc: "Premium oversized box tee, includes puff and screen print. designed in mind for anyone trying to rizz up that special someone",
+      preOrder:
+        "Please note that the wait time is subject to change based on manufacturing and shipping constraints. We will keep you informed of any updates and progress regarding your order.",
+      washInfo: "WASH MACHINE, DO NOT BLEACH, DO NOT TUMBLE, DO NOT DRY CLEAN",
     },
     {
       uuid: "price_1NaHTSDurtyT6kdC0yq1A8gJ",
       img: Item2,
       itemName: "STRGZE OG TEE",
       cost: "50.00",
+      desc: "Introducing our premium oversized box tee, crafted from 100% cotton for unparalleled comfort. Designed with streetwear in mind, it features a high ribbed neck and slouched shoulders for a relaxed fit. The tee boasts both puff and screen print detailing perfect for a night out stargazing",
+      preOrder:
+        "Please note that the wait time is subject to change based on manufacturing and shipping constraints. We will keep you informed of any updates and progress regarding your order.",
+      washInfo: "WASH MACHINE, DO NOT BLEACH, DO NOT TUMBLE, DO NOT DRY CLEAN",
     },
   ];
 

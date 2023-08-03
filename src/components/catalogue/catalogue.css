@@ -10,8 +10,6 @@
 }
 
 .SWW__Catalogue__Item {
-  aspect-ratio: 1 / 1;
-
   height: 550px;
 
   max-width: 500px;
@@ -53,7 +51,7 @@
 
 @media only screen and (max-width: 550px) {
   .SWW__Catalogue__Item {
-    height: 400px;
+    height: 500px;
 
     max-width: 400px;
   }
