@@ -1,11 +1,12 @@
 import "./openItemModal.css";
 
-import { FC, useState, useContext } from "react";
+import { FC, useState, useContext, useEffect } from "react";
 import { Item } from "../catalogue";
 import { ItemsContext } from "../../../App";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus, faXmark } from "@fortawesome/free-solid-svg-icons";
+import AddToCart from "../../addToCart/addToCart";
 
 interface IOpenItemModal {
   openItem: Item;
@@ -20,7 +21,6 @@ interface ICartItem {
   qty: number;
   img: string;
 }
-
 const OpenItemModal: FC<IOpenItemModal> = ({ openItem, setOpenItem }) => {
   let [qty, setQty] = useState<number>(1);
   let [size, setSize] = useState<string>("medium");
@@ -77,6 +77,16 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
 }) => {
   const { setItems } = useContext(ItemsContext);
 
+  const [addToCart, setAddToCart] = useState(false);
+
+  useEffect(() => {
+    if (addToCart === true) {
+      setTimeout(() => {
+        setAddToCart(false);
+      }, 1999);
+    }
+  }, [addToCart]);
+
   return (
     <div className="SWW__ItemModal__Main__Right">
       <h2>{item.itemName}</h2>
@@ -117,6 +127,7 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
             currentCartData.push(cartItem);
 
             setItems(currentCartData);
+            setAddToCart(true);
             return localStorage.setItem(
               "cart",
               JSON.stringify(currentCartData)
@@ -145,6 +156,7 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
           currentCartData[index] = newItem;
 
           setItems(currentCartData);
+          setAddToCart(true);
           return localStorage.setItem("cart", JSON.stringify(currentCartData));
         }}
         className="SWW__ItemModal__Main__Right__AddToCart"
@@ -164,6 +176,7 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
         name="PRE ORDER INFORMATION"
         text={item.preOrder}
       />
+      {addToCart ? <AddToCart /> : null}
     </div>
   );
 };
