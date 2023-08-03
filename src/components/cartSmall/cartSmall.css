@@ -154,3 +154,31 @@
   background-color: var(--black);
   color: white;
 }
+
+@media only screen and (max-width: 1200px) {
+  .SWW__CartSmall {
+    width: 40vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .SWW__CartSmall {
+    width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .SWW__CartSmall {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  .SWW__CartSmall {
+    width: 100vw;
+  }
+
+  .SWW__CartSmall__Total__Totals {
+    font-size: 1.2rem;
+  }
+}
