@@ -83,7 +83,7 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
     if (addToCart === true) {
       setTimeout(() => {
         setAddToCart(false);
-      }, 1999);
+      }, 2000);
     }
   }, [addToCart]);
 
