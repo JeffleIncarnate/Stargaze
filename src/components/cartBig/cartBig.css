@@ -169,11 +169,14 @@
 /* ---- Continue Shopping ---- */
 .SWW__CartBig__ContinueShopping {
   width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .SWW__CartBig__ContinueShopping > button {
   width: 20%;
-  margin-left: 40%;
 
   padding: 1rem;
 
@@ -205,11 +208,14 @@
 /* ---- Check Out ---- */
 .SWW__CartBig__CheckOut {
   width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .SWW__CartBig__CheckOut > button {
   width: 20%;
-  margin-left: 40%;
 
   padding: 1rem;
 
@@ -222,6 +228,16 @@
   border: none;
 
   border-bottom: 0.1rem solid var(--black);
+}
+
+@media only screen and (max-width: 1500px) {
+  .SWW__CartBig__ContinueShopping > button {
+    width: 50%;
+  }
+
+  .SWW__CartBig__CheckOut > button {
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -238,16 +254,44 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .SWW__CartBig__Header {
-    font-size: 0.9rem;
+@media only screen and (max-width: 850px) {
+  .SWW__CartBig__Items__Item {
+    flex-direction: column;
+
+    border-top: 0.1rem solid grey;
+    border-bottom: 0.1rem solid grey;
   }
 
-  .SWW__CartBig__Items__Item {
-    font-size: 0.8rem;
+  .SWW__CartBig__Items__Item__Product {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .SWW__CartBig__Items__Item__Quantity {
+    width: 100%;
+  }
+
+  .SWW__CartBig__Items__Item__Quantity__Update {
+    width: 100%;
+    margin: 0;
+  }
+
+  .SWW__CartBig__Items__Item__Quantity__Remove {
+    width: 100%;
+    margin: 0;
   }
 
   .SWW__CartBig__Items__Item__Quantity__Remove > button {
-    font-size: 0.8rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .SWW__CartBig__ContinueShopping > button {
+    width: 70%;
+  }
+
+  .SWW__CartBig__CheckOut > button {
+    width: 70%;
   }
 }
