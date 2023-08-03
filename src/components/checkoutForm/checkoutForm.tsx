@@ -75,10 +75,6 @@ const CheckoutForm = () => {
           <h2>
             Total Cost Inc GST + shipping: ${calulateTotalIncGstAndShipping()}
           </h2>
-
-          <p>
-            {`Do not attempt to add items now as they will not get added to the actual payment, please go back to catalogue and try again`}
-          </p>
         </div>
       ) : null}
 
