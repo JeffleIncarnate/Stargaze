@@ -36,7 +36,7 @@ const OpenItemModal: FC<IOpenItemModal> = ({ openItem, setOpenItem }) => {
       </button>
 
       <div className="SWW__ItemModal__Main">
-        <_OpenItemModalLeft img={openItem.img} />
+        <_OpenItemModalLeft img={openItem.img} img2={openItem.img2} />
         <_OpenItemModalRight
           item={openItem}
           qty={qty}
@@ -51,12 +51,27 @@ const OpenItemModal: FC<IOpenItemModal> = ({ openItem, setOpenItem }) => {
 
 interface _IOpenItemModalLeft {
   img: string;
+  img2: string;
 }
 
-const _OpenItemModalLeft: FC<_IOpenItemModalLeft> = ({ img }) => {
+const _OpenItemModalLeft: FC<_IOpenItemModalLeft> = ({ img, img2 }) => {
+  const [openImage, setOpenImage] = useState<string>(img);
+
+  const setFirstImage = () => {
+    setOpenImage(img);
+  };
+  const setSecondImage = () => {
+    setOpenImage(img2);
+  };
+
   return (
     <div className="SWW__ItemModal__Main__Left">
-      <img src={img} alt="" />
+      <img src={openImage} alt="" />
+
+      <div className="SWW__ItemModal__Main__Left__Selector">
+        <img src={img} alt="" onClick={setFirstImage} />
+        <img src={img2} alt="" onClick={setSecondImage} />
+      </div>
     </div>
   );
 };
