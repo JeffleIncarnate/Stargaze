@@ -187,10 +187,6 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
         name="WASH INSTRUCTIONS"
         text={item.washInfo}
       />
-      <__OpenIemModalRightDropdown
-        name="PRE ORDER INFORMATION"
-        text={item.preOrder}
-      />
       {addToCart ? <AddToCart /> : null}
     </div>
   );
@@ -278,5 +274,3 @@ const __OpenIemModalRightDropdown: FC<__IOpenIemModalRightDropdown> = ({
 };
 
 export default OpenItemModal;
-
-//

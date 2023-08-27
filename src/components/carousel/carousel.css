@@ -1,56 +1,61 @@
-@import url("https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap");
-
-@font-face {
-  font-family: "SHEESSHHH";
-  src: url("../../assets/fonts/digital-7.ttf");
-}
-
 .SWW__Marquee {
-  display: flex;
-  overflow: hidden;
+  width: 500px;
+  height: 75px;
 
-  color: white;
-  background-color: black;
+  z-index: 1;
 
-  font-family: "SHEESSHHH";
-  font-size: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  right: -30%;
 
-  letter-spacing: 0.2rem;
+  background-color: #1560bd;
 
-  padding: 1rem;
+  border: 0.4rem #002366 solid;
+  border-radius: 1rem;
 
-  z-index: 100000000000000;
-}
-
-.SWW__Marquee__Group {
-  min-width: 100%;
-  width: 100%;
-
-  margin: 0 2rem;
-
-  flex-shrink: 0;
-
-  white-space: nowrap;
+  padding: 1rem 0.5;
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
-  animation: scroll 15s linear infinite;
+  color: white;
+
+  animation: info 5s;
+
+  animation-name: info;
+  animation-duration: 5s;
+  overflow: hidden;
 }
 
-@keyframes scroll {
+.SWW__Marquee__Icon {
+  flex: 1;
+
+  font-size: 2rem;
+}
+
+.SWW__Marquee a {
+  color: white;
+}
+
+.SWW__Marquee > p {
+  flex: 6;
+}
+
+@keyframes info {
   0% {
-    transform: translateX(0);
+    right: -30%;
   }
-
+  15% {
+    right: 1.5rem;
+  }
+  50% {
+    right: 1rem;
+  }
+  85% {
+    right: 1.5rem;
+  }
   100% {
-    transform: translateX(calc(-100% - 0rem));
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  .SWW__Marquee__Group {
-    gap: 100%;
+    right: -30%;
   }
 }
