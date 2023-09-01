@@ -179,10 +179,7 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
         ADD TO CART
       </button>
       <__OpenIemModalRightDropdown name="DESCRIPTION" text={item.desc} />
-      <__OpenIemModalRightDropdown
-        name="SIZE GUIDE"
-        text="Lorem ipsum dolar sit"
-      />
+      <__OpenIemModalRightDropdown name="SIZE GUIDE" text="e" />
       <__OpenIemModalRightDropdown
         name="WASH INSTRUCTIONS"
         text={item.washInfo}
@@ -255,21 +252,51 @@ const __OpenIemModalRightDropdown: FC<__IOpenIemModalRightDropdown> = ({
   let [openDropdown, setOpenDowndown] = useState<boolean>(false);
 
   return (
-    <div
-      className="SWW__ItemModal__Main__Right__Dropdown"
-      onClick={() => {
-        setOpenDowndown(!openDropdown);
-      }}
-    >
-      <div className="SWW__ItemModal__Main__Right__Dropdown__Icon">
-        {name} <FontAwesomeIcon icon={openDropdown ? faMinus : faPlus} />
-      </div>
-      {openDropdown ? (
-        <div className="SWW__ItemModal__Main__Right__Dropdown__Text">
-          {text}
+    <>
+      {name !== "SIZE GUIDE" ? (
+        <div
+          className="SWW__ItemModal__Main__Right__Dropdown"
+          onClick={() => {
+            setOpenDowndown(!openDropdown);
+          }}
+        >
+          <div className="SWW__ItemModal__Main__Right__Dropdown__Icon">
+            {name} <FontAwesomeIcon icon={openDropdown ? faMinus : faPlus} />
+          </div>
+          {openDropdown ? (
+            <div className="SWW__ItemModal__Main__Right__Dropdown__Text">
+              {text}
+            </div>
+          ) : null}
         </div>
-      ) : null}
-    </div>
+      ) : (
+        <div
+          className="SWW__ItemModal__Main__Right__Dropdown"
+          onClick={() => {
+            setOpenDowndown(!openDropdown);
+          }}
+        >
+          <div className="SWW__ItemModal__Main__Right__Dropdown__Icon">
+            {name} <FontAwesomeIcon icon={openDropdown ? faMinus : faPlus} />
+          </div>
+          {openDropdown ? (
+            <div className="SWW__ItemModal__Main__Right__Dropdown__Text">
+              SMALL <br></br>
+              Chest: 104CM / 40.9”<br></br>
+              Length: 65CM / 25.5”<br></br>
+              <br></br>
+              MEDIUM<br></br>
+              Chest: 110CM / 43.3”<br></br>
+              Length: 69CM / 27.1”<br></br>
+              <br></br>
+              LARGE<br></br>
+              Chest: 116CM / 45.6”<br></br>
+              Length: 72CM / 28.3”<br></br>
+            </div>
+          ) : null}
+        </div>
+      )}
+    </>
   );
 };
 
