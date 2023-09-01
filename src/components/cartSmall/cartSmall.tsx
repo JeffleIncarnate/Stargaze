@@ -91,7 +91,7 @@ const CartSmall: FC<ICartSmall> = ({ setCartOpen }) => {
 
         <div className="SWW__CartSmall__Total__Totals">
           <p>SHIPPING</p>
-          <p>$10 NZD</p>
+          <p>$5 NZD</p>
         </div>
 
         <button
