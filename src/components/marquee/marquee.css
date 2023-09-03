@@ -10,3 +10,7 @@
 .Marquee__Text {
   margin: 0 2rem;
 }
+
+.Marquee__Href {
+  text-decoration: none;
+}
