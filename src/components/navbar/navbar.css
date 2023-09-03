@@ -15,6 +15,10 @@
   width: 20%;
 }
 
+.SWW__Navar__Logo__Small {
+  display: none;
+}
+
 .SWW__Navar__Logo > img {
   width: 100%;
 }
@@ -216,5 +220,19 @@
 @media only screen and (max-width: 550px) {
   .SWW__Navar__Logo {
     width: 45%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .SWW__Navar__Logo__Big {
+    display: none;
+  }
+
+  .SWW__Navar__Logo__Small {
+    display: block;
+  }
+
+  .SWW__Navar__Logo {
+    width: 20%;
   }
 }

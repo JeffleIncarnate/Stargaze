@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 // Images
-import { BlackSVG } from "../../assets/__img__";
+import { BlackSVG, BlackIcon } from "../../assets/__img__";
 
 // Components
 import CartSmall from "../cartSmall/cartSmall";
@@ -44,11 +44,14 @@ const Navbar = () => {
     <nav className="SWW__Navbar">
       <div className="SWW__Navar__Logo">
         <img
+          className="SWW__Navar__Logo__Big"
           src={BlackSVG}
           onClick={() => {
             navigate("/");
           }}
         />
+
+        <img className="SWW__Navar__Logo__Small" src={BlackIcon} alt="" />
       </div>
 
       <div className="SWW__Navar__Links">

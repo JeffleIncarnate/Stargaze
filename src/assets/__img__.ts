@@ -5,6 +5,7 @@ import Item2 from "./items/2.png";
 import WhiteSVG from "./logos/white.svg";
 import BlackSVG from "./logos/black.svg";
 import Front from "./items/front.png";
+import BlackIcon from "./logos/blackIcon.png";
 
 export {
   StargazeLogoWhite,
@@ -14,4 +15,5 @@ export {
   BlackSVG,
   Item2,
   Front,
+  BlackIcon,
 };
