@@ -106,7 +106,7 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
     <div className="SWW__ItemModal__Main__Right">
       <h2>{item.itemName}</h2>
       <p>${item.cost} NZD</p>
-      <__OpenIemModalRightSize size={size} setSize={setSize} />
+      <__OpenIemModalRightSize size={size} setSize={setSize} item={item} />
       <button
         onClick={() => {
           let cartItem: ICartItem = {
@@ -192,11 +192,13 @@ const _OpenItemModalRight: FC<_IOpenItemModalRight> = ({
 interface __IOpenIemModalRightSize {
   setSize: (qty: string) => void;
   size: string;
+  item: Item;
 }
 
 const __OpenIemModalRightSize: FC<__IOpenIemModalRightSize> = ({
   size,
   setSize,
+  item,
 }) => {
   return (
     <div className="SWW__ItemModal__Main__Right__Sizes">
@@ -224,18 +226,23 @@ const __OpenIemModalRightSize: FC<__IOpenIemModalRightSize> = ({
       >
         MEDIUM
       </button>
-      <button
-        className={
-          size === "large"
-            ? "SWW__ItemModal__Main__Right__Sizes__Active"
-            : "SWW__ItemModal__Main__Right__Sizes__NotActive"
-        }
-        onClick={() => {
-          setSize("large");
-        }}
-      >
-        LARGE
-      </button>
+
+      {item.itemName !== "STRGZE OG TEE" ? (
+        <button
+          className={
+            size === "large"
+              ? "SWW__ItemModal__Main__Right__Sizes__Active"
+              : "SWW__ItemModal__Main__Right__Sizes__NotActive"
+          }
+          onClick={() => {
+            setSize("large");
+          }}
+        >
+          LARGE
+        </button>
+      ) : (
+        "LARGE SOLD OUT"
+      )}
     </div>
   );
 };
