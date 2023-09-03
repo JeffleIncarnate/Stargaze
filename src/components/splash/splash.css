@@ -27,7 +27,19 @@
   font-size: 1rem;
   font-weight: bold;
 
-  border-radius: 1rem;
-
   font-size: 2rem;
+
+  background-color: black;
+
+  color: white;
+
+  border: none;
+
+  font-family: inherit;
+}
+
+@media only screen and (max-width: 1000px) {
+  .SWW__Splash > button {
+    font-size: 1rem;
+  }
 }
