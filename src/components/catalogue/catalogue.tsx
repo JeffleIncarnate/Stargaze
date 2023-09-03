@@ -25,7 +25,7 @@ const Catalogue = () => {
       img: Item1,
       img2: Front,
       itemName: "CMWYSG TEE",
-      cost: "49.99",
+      cost: "45.00",
       desc: "Introducing our premium oversized box tee, crafted from 100% cotton for unparalleled comfort. Designed with streetwear in mind, it features a high ribbed neck and slouched shoulders for a relaxed fit. The tee boasts both puff and screen print detailing perfect for a night out stargazing",
 
       preOrder:
@@ -37,7 +37,7 @@ const Catalogue = () => {
       img: Item2,
       img2: Front,
       itemName: "STRGZE OG TEE",
-      cost: "49.99",
+      cost: "45.00",
       desc: "Premium oversized box tee, includes puff and screen print. designed in mind for anyone trying to rizz up that special someone",
       preOrder:
         "Please note that the wait time is subject to change based on manufacturing and shipping constraints. We will keep you informed of any updates and progress regarding your order.",

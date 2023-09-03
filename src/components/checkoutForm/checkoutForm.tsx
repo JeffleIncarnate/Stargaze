@@ -57,7 +57,6 @@ const CheckoutForm = () => {
     }
 
     total += total * 0.15;
-    total += 10;
 
     total = Math.ceil(total);
 
@@ -72,9 +71,8 @@ const CheckoutForm = () => {
             return <_ShowItems key={crypto.randomUUID()} item={item} />;
           })}
 
-          <h2>
-            Total Cost Inc GST + shipping: ${calulateTotalIncGstAndShipping()}
-          </h2>
+          <h2>Shipping: FREE</h2>
+          <h2>Total Cost Inc GST: ${calulateTotalIncGstAndShipping()}</h2>
         </div>
       ) : null}
 

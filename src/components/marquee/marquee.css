@@ -1,0 +1,12 @@
+.Marquee {
+  background-color: black;
+  color: white;
+
+  font-size: 1rem;
+
+  padding: 1rem;
+}
+
+.Marquee__Text {
+  margin: 0 2rem;
+}
