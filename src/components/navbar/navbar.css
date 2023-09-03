@@ -21,6 +21,7 @@
 
 .SWW__Navar__Logo > img {
   width: 100%;
+  cursor: pointer;
 }
 
 /* -- Text Links -- */
