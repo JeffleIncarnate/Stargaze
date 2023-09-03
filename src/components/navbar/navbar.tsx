@@ -51,7 +51,13 @@ const Navbar = () => {
           }}
         />
 
-        <img className="SWW__Navar__Logo__Small" src={BlackIcon} alt="" />
+        <img
+          className="SWW__Navar__Logo__Small"
+          src={BlackIcon}
+          onClick={() => {
+            navigate("/");
+          }}
+        />
       </div>
 
       <div className="SWW__Navar__Links">
