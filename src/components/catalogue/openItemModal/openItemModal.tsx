@@ -202,18 +202,23 @@ const __OpenIemModalRightSize: FC<__IOpenIemModalRightSize> = ({
 }) => {
   return (
     <div className="SWW__ItemModal__Main__Right__Sizes">
-      <button
-        className={
-          size === "small"
-            ? "SWW__ItemModal__Main__Right__Sizes__Active"
-            : "SWW__ItemModal__Main__Right__Sizes__NotActive"
-        }
-        onClick={() => {
-          setSize("small");
-        }}
-      >
-        SMALL
-      </button>
+      {item.itemName !== "CMWYSG TEE" ? (
+        <button
+          className={
+            size === "small"
+              ? "SWW__ItemModal__Main__Right__Sizes__Active"
+              : "SWW__ItemModal__Main__Right__Sizes__NotActive"
+          }
+          onClick={() => {
+            setSize("small");
+          }}
+        >
+          SMALL
+        </button>
+      ) : (
+        "SMALL SOLD OUT"
+      )}
+
       <button
         className={
           size === "medium"
