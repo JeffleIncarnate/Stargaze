@@ -202,7 +202,7 @@ const __OpenIemModalRightSize: FC<__IOpenIemModalRightSize> = ({
 }) => {
   return (
     <div className="SWW__ItemModal__Main__Right__Sizes">
-      {item.itemName !== "CMWYSG TEE" ? (
+      {item.itemName !== "CMWYSG TEE" && item.itemName !== "STRGZE OG TEE" ? (
         <button
           className={
             size === "small"
